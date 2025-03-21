@@ -70,9 +70,27 @@ import support_img from './support_img.png'
 import menu_icon from './menu_icon.png'
 import about_img from './about_img.png'
 import contact_img from './contact_img.png'
-import razorpay_logo from './razorpay_logo.png'
+import paystack_logo from './paystack.png'
 import stripe_logo from './stripe_logo.png'
 import cross_icon from './cross_icon.png'
+import hero_img_top from './herotop.png'
+import hero_img_buttom from './herobuttom.png'
+import hero_img_right from './heroleft.png'
+import hero_img_left from './heroright.png'
+import louis from "./louis.png"
+import channel from "./channel.png"
+import denim from "./denim.png"
+import calvin from "./calvin.png"
+import prada from "./prada.png"
+import peaky from "./bests.png"
+import points from "./points.png"
+import newsOne from "./footer1.png"
+import newsTwo from "./footer2.png"
+import testimonial_img from "./testimonial.jpg"
+import testimonial_img_two from "./testimonial2.jpg"
+import testimonial_img_three from "./testimonial3.jpg"
+import testimonial_star_img from "./testimonialStar.png"
+import login_img from "./login_img.jpg"
 
 export const assets = {
     logo,
@@ -90,9 +108,27 @@ export const assets = {
     menu_icon,
     about_img,
     contact_img,
-    razorpay_logo,
+    paystack_logo,
     stripe_logo,
-    cross_icon
+    cross_icon,
+    hero_img_top,
+    hero_img_buttom,
+    hero_img_left,
+    hero_img_right,
+    channel,
+    louis,
+    prada,
+    denim,
+    calvin,
+    peaky,
+    points,
+    newsOne,
+    newsTwo,
+    testimonial_img,
+    testimonial_img_two,
+    testimonial_img_three,
+    testimonial_star_img,
+    login_img
 }
 
 export const products = [

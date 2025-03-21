@@ -4,8 +4,10 @@ import {
   updateStatus,
   placeOrder,
   placeOrderStripe,
-  placeOrderRazorpay,
+  placeOrderPaystack,
   UserOrders,
+  verifyStripe,
+  verifyPaystack
 } from "../controllers/orderController.js";
 import adminAuth from "../middleware/adminAuth.js";
 import authUser from "../middleware/auth.js";
@@ -19,9 +21,14 @@ orderRouter.post("/status", adminAuth, updateStatus);
 //payment features
 orderRouter.post("/place", authUser, placeOrder);
 orderRouter.post("/stripe", authUser, placeOrderStripe);
-orderRouter.post("/razorpay", authUser, placeOrderRazorpay);
+orderRouter.post("/paystack", authUser, placeOrderPaystack);
 
 //User features
 orderRouter.post("/userorders", authUser, UserOrders);
 
+//Verify payment
+orderRouter.post("/verifyStripe", authUser, verifyStripe)
+orderRouter.post("/verifyPaystack", authUser, verifyPaystack)
+
 export default orderRouter;
+

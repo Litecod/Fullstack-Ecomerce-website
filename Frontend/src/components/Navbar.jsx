@@ -1,14 +1,13 @@
 import React, { useContext, useState } from "react";
-import search from "../assets/search_icon.png";
 import { Link, NavLink } from "react-router-dom";
 import { assets } from "../assets/assets";
 import { ShopContext } from "../context/ShopContext";
-import { serviceworker } from "globals";
+import { MdOutlineShoppingCart } from "react-icons/md";
+import { CgProfile } from "react-icons/cg";
 
 const Navbar = () => {
   const [visible, setvisible] = useState(false);
   const {
-    setShowSearch,
     getCartCount,
     navigate,
     token,
@@ -26,43 +25,36 @@ const Navbar = () => {
   return (
     <div className="flex items-center justify-between py-5 font-medium">
       <Link to="/">
-        <img src={assets.logo} alt="" className="w-36" />
+        <h1 className="sale text-[2rem]">LITE SHOPPY<span className="text-[#8b5100]">.</span></h1>
       </Link>
       <ul className="hidden sm:flex gap-5 text-sm text-gray-700">
         <NavLink to="/" className="flex flex-col items-center gap-1">
           <p>HOME</p>
-          <hr className="w-2/4 border-none h-[1.5px] hidden bg-gray-700" />
+          <hr className="w-3/4 border-[#8b5100] border-[2px] h-[1.5px] hidden bg-gray-700" />
         </NavLink>
         <NavLink to="/collection" className="flex flex-col items-center gap-1">
           <p>COLLECTION</p>
-          <hr className="w-2/4 border-none h-[1.5px] hidden bg-gray-700" />
+          <hr className="w-3/4 border-[#8b5100] border-[2px] h-[1.5px] hidden bg-gray-700" />
         </NavLink>
         <NavLink to="/about" className="flex flex-col items-center gap-1">
           <p>ABOUT</p>
-          <hr className="w-2/4 border-none h-[1.5px] hidden bg-gray-700" />
+          <hr className="w-3/4 border-[#8b5100] border-[2px] h-[1.5px] hidden bg-gray-700" />
         </NavLink>
         <NavLink to="/contact" className="flex flex-col items-center gap-1">
           <p>CONTACT</p>
-          <hr className="w-2/4 border-none h-[1.5px] hidden bg-gray-700" />
+          <hr className="w-3/4 border-[#8b5100] border-[2px] h-[1.5px] hidden bg-gray-700" />
         </NavLink>
       </ul>
       <div className="flex items-center gap-6">
-        <img
-          onClick={() => setShowSearch(true)}
-          src={assets.search_icon}
-          className="w-5 cursor-pointer"
-          alt=""
-        />
         <div className="group relative">
-          <img
+          <CgProfile
             onClick={() => (token ? null : navigate("/login"))}
-            className="w-5 cursor-pointer"
-            src={assets.profile_icon}
+            className="text-[1.5rem] cursor-pointer"
             alt=""
           />
           {/* dropDown */}
           {token && (
-            <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4">
+            <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4 z-10">
               <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded">
                 <p className="cursor-pointer hover:text-black">My profile</p>
                 <p onClick={() => navigate("/orders")} className="cursor-pointer hover:text-black">Orders</p>
@@ -74,8 +66,8 @@ const Navbar = () => {
           )}
         </div>
         <Link to="/cart" className="relative">
-          <img src={assets.cart_icon} className="w-5 min-w-5" alt="" />
-          <p className="absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-black text-white aspect-square rounded-full text-[8px] ">
+          <MdOutlineShoppingCart className="text-[1.5rem]" alt="" />
+          <p className="absolute bottom-[10px] w-4 text-center leading-4 bg-black text-white aspect-square rounded-full text-[8px] ">
             {getCartCount()}
           </p>
         </Link>
@@ -105,7 +97,7 @@ const Navbar = () => {
             onClick={() => {
               setvisible(false);
             }}
-            className="py-2 pl-6 border-y"
+            className="py-2 pl-6"
             to="/"
             HOME
           >
@@ -115,7 +107,7 @@ const Navbar = () => {
             onClick={() => {
               setvisible(false);
             }}
-            className="py-2 pl-6 border-y "
+            className="py-2 pl-6"
             to="/collection"
           >
             COLLECTION
@@ -124,7 +116,7 @@ const Navbar = () => {
             onClick={() => {
               setvisible(false);
             }}
-            className="py-2 pl-6 border-y"
+            className="py-2 pl-6 "
             to="/about"
           >
             ABOUT
@@ -133,7 +125,7 @@ const Navbar = () => {
             onClick={() => {
               setvisible(false);
             }}
-            className="py-2 pl-6 border-y"
+            className="py-2 pl-6"
             to="/contact"
           >
             CONTACT

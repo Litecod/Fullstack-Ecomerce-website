@@ -1,13 +1,17 @@
 import React from "react";
-import { assets } from "../assets/assets";
 import { FaCopyright } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="">
+    <div className="z-30">
       <div className="flex flex-col sm:grid grid-cols-[3fr_1fr_1fr] gap-14 my-10 mt-40 text-sm">
         <div className="">
-          <img src={assets.logo} className="mb-5 w-32" alt="" />
+          <Link to="/">
+            <h1 className="sale text-[2rem]">
+              LITE SHOPPY<span className="text-[#8b5100]">.</span>
+            </h1>
+          </Link>
           <p className="w-full md:w-2/3 text-gray">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam qui
             dolor doloremque. Facilis aut iusto est sit autem unde ratione
@@ -36,7 +40,14 @@ const Footer = () => {
       </div>
       <div className="">
         <hr />
-        <p className="py-5 flex gap-1 text-sm text-center items-center mx-auto w-full"> Copyright 2025 <span><FaCopyright /></span> Litecod.com - All Right Reserved </p>
+        <p className="py-5 flex gap-1 text-sm text-center items-center mx-auto w-full">
+          {" "}
+          Copyright 2025{" "}
+          <span>
+            <FaCopyright />
+          </span>{" "}
+          Litecod.com - All Right Reserved{" "}
+        </p>
       </div>
     </div>
   );

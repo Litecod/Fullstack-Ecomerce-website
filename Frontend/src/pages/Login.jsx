@@ -2,6 +2,7 @@ import axios from "axios";
 import { ShopContext } from "../context/ShopContext";
 import React, { useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import { assets } from "../assets/assets";
 
 const Login = () => {
   const [currentState, setCurrentState] = useState("Login");
@@ -44,9 +45,13 @@ const Login = () => {
   },[token])
 
   return (
-    <form
+    <div className="flex mt-14 gap-[2rem]">
+      <div className="w-[60%] hidden md:block">
+        <img className="w-full" src={assets.login_img} alt="" />
+      </div>
+      <form
       onSubmit={onSubmitHandler}
-      className="flex flex-col items-center w-[90%] sm:max-w-96 m-auto mt-14 gap-4 text-gray-800 "
+      className="flex flex-col w-full md:w-[40%] gap-4 md:mt-[-2rem] lg:mt-[2rem] text-gray-800 "
     >
       <div className="inline-flex items-center gap-2 mb-2 mt-10 ">
         <p className="prata-regular text-3xl">{currentState}</p>
@@ -102,6 +107,7 @@ const Login = () => {
         {currentState === "Login" ? "Sign In" : "Sign Up"}
       </button>
     </form>
+    </div>
   );
 };
 

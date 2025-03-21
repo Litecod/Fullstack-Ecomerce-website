@@ -2,11 +2,12 @@ import NewsLetterBox from '../components/NewsLetterBox'
 import { assets } from '../assets/assets'
 import Title from '../components/Title'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Contact = () => {
   return (
     <div> 
-      <div className="text-center text-2xl pt-10 border-t">
+      <div className="text-center text-2xl pt-10">
         <Title text1={"CONTACT"} text2={"US"}/>
       </div>
 
@@ -16,9 +17,9 @@ const Contact = () => {
           <p className=" font-semibold text-xl text-gray-600">Our Store</p>
           <p className="text-gray-500">25 ajegunle <br /> Lagos Nigeria</p>
           <p className="text-gray-500">Tel: LiteTest@gmail.com <br /> Email: admin@gmail.com</p>
-          <p className="font-semibold text-xl text-gray-600">Careers at Forever</p>
+          <p className="font-semibold text-xl text-gray-600">Careers at Lite Shoppy</p>
           <p className="text-gray-500">Learn more about our teams and job openings</p>
-          <button className='border border-black px-8 py-4 text-sm hover:bg-black hover:text-white transition-all duration-500'>Explore Jobs</button>
+          <Link to={"/collection"} className='border border-black px-8 py-4 text-sm hover:bg-black hover:text-white transition-all duration-500'>Explore Jobs</Link>
         </div>
       </div>
 

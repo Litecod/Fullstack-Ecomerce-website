@@ -1,27 +1,32 @@
 import React from "react";
 import { assets } from "../assets/assets";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <div className="flex flex-col sm:flex-row border border-gray-400">
+    <div className="flex md:grid md:grid-cols-[3fr_3fr] lg:grid-cols-[3fr_4fr_3fr] mt-[2rem] justify-between gap-6 rounded">
       {/**hero left side */}
-
-      <div className="w-full sm:w-1/2 flex items-center justify-center py-10 sm:py-0">
-        <div className="text-[#414141]">
-            <div className="flex items-center gap-2 ">
-                <p className="w-8 md:w-11 h-[2px] bg-[#414141]"></p>
-                <p className="font-medium text-sm md:text-base"> OUR BESTSELLERS</p>
-            </div>
-            <h1 className="prata-regular text-3xl sm:py-3 lg:text-5xl leading-relaxed"> Latest Arrivals</h1>
-            <div className="flex items-center gap-2">
-                <p className="font-semibold text-sm md:text-base">SHOP NOW</p>
-                <p className="w-8 md:w-11 h-[1px] bg-[#414141]"></p>
-            </div>
-        </div>
+      <div className="relative overflow-y-hidden xl:h-[39rem] pt-[6rem] bg-gray-200 hidden md:block">
+        <img src={assets.hero_img_left} alt="" />
       </div>
-      {/**Hero right side  */}
 
-    <img className="wfull sm:w-1/2" src={assets.hero_img} alt="" />
+      {/* hero middle */}
+
+      <div className=" md:overflow-y-hidden xl:h-[39rem] w-full items-center justify-center">
+        <img className=" bg-gray-200 rounded w-full" src={assets.hero_img_top} alt="" />
+        <div className=" flex flex-col text-center">
+          <p className="text-[3rem] md:text-[5rem]">ULTIMATE</p>
+          <p className="text-[5rem] md:text-[8rem] mt-[-2rem] lg:mt-[-4rem] sale">SALE</p>
+          <p className="md:mt-[-2rem]">NEW COLLECTION</p>
+          <Link to={"/collection"} className="w-[8rem] px-3 py-2 bg-black text-white my-3 rounded mx-auto">Shop Now</Link>
+        </div>
+        <img className="w-full" src={assets.hero_img_buttom} alt="" />
+      </div>
+      
+      {/**Hero right side  */}
+      <div className="relative overflow-y-hidden xl:h-[39rem] pt-[6rem] bg-gray-200 px-[4rem] rounded hidden lg:block">
+        <img src={assets.hero_img_right} alt="" />
+      </div>
     </div>
   );
 };

@@ -16,3 +16,5 @@ const productModel = mongoose.models.product || mongoose.model("product", produc
 
 
 export default productModel;
+
+

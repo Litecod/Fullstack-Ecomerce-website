@@ -16,16 +16,22 @@ const PeakyBlinders = () => {
       <div className="w-[50%] hidden md:block max-w-[30rem] mt-[-3rem] lg:mt-0">
         <div className="flex flex-col md:gap-[0.5rem] lg:gap-[1rem]">
           <p className="text-gray-500">Women Collection</p>
-          <h1 className="prata-regular text-[2rem] lg:text-[3rem]">Peaky Blinders</h1>
+          <h1 className="prata-regular text-[2rem] lg:text-[3rem]">
+            Peaky Blinders
+          </h1>
           <p className="underline">DESCRIPTION</p>
           <p className="text-gray-500 text-[0.8rem] lg:text-[1rem]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque
-            duis ultrices sollicitudin aliquam sem. Scelerisque duis ultrices
-            sollicitudin. Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit. Scelerisque duis.
+            Peaky Blinders Classic Outfit—a perfect blend of British
+            sophistication and old-school gangster charm. This premium-quality
+            3-piece suit includes a tailored waistcoat, high-waisted trousers,
+            and a stylish blazer, giving you the signature 1920s look inspired
+            by the legendary Shelby brothers
           </p>
-          <p>₦100,000.00</p>
-          <Link className="px-[1rem] py-[0.8rem] bg-[#000] text-[#fff] hover:bg-gray-800 duration-150 rounded max-w-[8rem] text-center" to={"/"}>
+          <p>₦170,000.00</p>
+          <Link
+            className="px-[1rem] py-[0.8rem] bg-[#000] text-[#fff] hover:bg-gray-800 duration-150 rounded max-w-[8rem] text-center"
+            to={"/product/67de7a307d18d6c0005375d4"}
+          >
             Buy Now
           </Link>
         </div>

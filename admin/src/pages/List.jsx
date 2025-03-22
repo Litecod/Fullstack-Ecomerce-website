@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { backendUrl, currency } from "../App";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { RiDeleteBin2Fill } from "react-icons/ri";
 
 const List = ({ token }) => {
   const [list, setList] = useState([]);
@@ -45,16 +46,16 @@ const List = ({ token }) => {
   }, []);
 
   return (
-    <>
-      <p className="mb-2">All Product List</p>
+    <div className="p-5 md:p-8 rounded">
+      <p className="mb-2">Product List</p>
       <div className=" flex flex-col gap-2">
         {/* list table title */}
-        <div className="hidden md:grid grid-cols-[1fr_3fr_1fr_1fr_1fr] items-center py-1 px-2 border bg-gray-100 text-sm">
+        <div className="hidden md:grid grid-cols-[1fr_3fr_1fr_1fr_1fr] items-center py-1 px-2 rounded text-sm">
           <b>Image</b>
           <b>Name</b>
           <b>Category</b>
           <b>Price</b>
-          <b className="text-center">Action</b>
+          <b className="text-center">Delete</b>
         </div>
         {/* Product List */}
 
@@ -62,26 +63,23 @@ const List = ({ token }) => {
           return (
             <div
               key={index}
-              className="grid grid-cols-[1fr_ 3fr_1fr] md:grid-cols-[1fr_3fr_1fr_1fr_1fr] items-center gap-2 py-1 px-2 border text-sm"
+              className="grid grid-cols-[1fr_ 3fr_1fr] md:grid-cols-[1fr_3fr_1fr_1fr_1fr] items-center gap-2 py-2 px-2 text-sm bg-gray-50 shadow-sm rounded shadow-[#0000000c]"
             >
               <img className="w-12" src={item.image[0]} alt="" />
               <p className="">{item.name}</p>
               <p className="">{item.category}</p>
               <p className="">
                 {currency}
-                {item.price}
+                {item.price},000.00
               </p>
-              <p
-                onClick={() => removeProduct(item._id)}
-                className="text-right md:text-center cursor-pointer text-lg"
-              >
-                x
-              </p>
+                <div className=" w-full">
+                <RiDeleteBin2Fill onClick={() => removeProduct(item._id)} className="text-right md:mx-auto cursor-pointer text-lg"/>
+                </div>
             </div>
           );
         })}
       </div>
-    </>
+    </div>
   );
 };
 

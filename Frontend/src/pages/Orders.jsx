@@ -40,12 +40,8 @@ const Orders = () => {
   }, [token])
 
   return (
-    <div className=" pt-16">
-      <div className="text-2xl">
-        
-      <Title text1={"MY"} text2={"ORDERS"}/>
-      </div>
-      <div className=" mt-[2rem]">
+    <div className=" pt-6">
+      <div className="">
         {
           orderData.map((item,index) => {
             return (
@@ -55,7 +51,7 @@ const Orders = () => {
                 <div className="">
                   <p className='sm:text-base font-medium'>{item.name}</p>
                   <div className="flex items-center gap-3 mt-1 text-base text-gray-700">
-                    <p >{currency}{item.price}</p>
+                    <p >{currency}{item.price},000.00</p>
                     <p className=''>Quantity: {item.quantity} </p>
                     <p className=''>Size: {item.size}</p>
                   </div>
@@ -68,7 +64,7 @@ const Orders = () => {
                   <p className="min-w-2 h-2 rounded-full bg-green-500"></p>
                   <p className="text-sm md:text-base">{item.status}</p>
                  </div>
-                 <button onClick={loadOrderData} className="border px-4 py-2 text-sm font-medium rounded-sm">Track Order</button>
+                 <button onClick={loadOrderData} className="border px-4 py-2 text-sm font-medium rounded-sm">Track Package</button>
               </div>
             </div>
           )})

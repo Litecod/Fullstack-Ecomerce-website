@@ -63,10 +63,10 @@ const Add = ({ token }) => {
   return (
     <form
       onSubmit={onSubmitHandler}
-      className="flex flex-col w-full items-start gap-3"
+      className="addp flex flex-col w-full items-start gap-3 p-5 md:p-8 rounded"
     >
       <div>
-        <p className="mb-2">Upload Image</p>
+        <p className="mb-2">Add Image</p>
         <div className="flex gap-2">
           <label htmlFor="image1">
             <img
@@ -123,7 +123,7 @@ const Add = ({ token }) => {
         </div>
       </div>
       <div className="w-full">
-        <p className="mb-2">Product Name</p>
+        <p className="mb-2">Name</p>
         <input
           onChange={(e) => setName(e.target.value)}
           value={name}
@@ -134,7 +134,7 @@ const Add = ({ token }) => {
         />
       </div>
       <div className="w-full">
-        <p className="mb-2">Product Description</p>
+        <p className="mb-2">Description</p>
         <textarea
           onChange={(e) => setDescription(e.target.value)}
           value={description}
@@ -146,7 +146,7 @@ const Add = ({ token }) => {
       </div>
       <div className="flex flex-col sm:flex-row gap-2 w-full sm:gap-8">
         <div>
-          <p className="mb-2">Product category</p>
+          <p className="mb-2">Category</p>
           <select
             onChange={(e) => setCategory(e.target.value)}
             className="w-full px-3 py-2"
@@ -169,7 +169,7 @@ const Add = ({ token }) => {
         </div>
 
         <div>
-          <p className="mb-2">Product Price</p>
+          <p className="mb-2">Price</p>
           <input
             onChange={(e) => setPrice(e.target.value)}
             value={price}
@@ -194,8 +194,8 @@ const Add = ({ token }) => {
           >
             <p
               className={`${
-                sizes.includes("S") ? "bg-pink-100" : "bg-slate-200"
-              } px-3 py-1 cursor-pointer`}
+                sizes.includes("S") ? "bg-[#8b5100] text-white" : "bg-gray-100"
+              } px-3 py-1 cursor-pointer rounded`}
             >
               S
             </p>
@@ -211,8 +211,8 @@ const Add = ({ token }) => {
           >
             <p
               className={`${
-                sizes.includes("M") ? "bg-pink-100" : "bg-slate-200"
-              } px-3 py-1 cursor-pointer`}
+                sizes.includes("M") ? "bg-[#8b5100] text-white" : "bg-gray-100"
+              } px-3 py-1 cursor-pointer rounded`}
             >
               M
             </p>
@@ -228,8 +228,8 @@ const Add = ({ token }) => {
           >
             <p
               className={`${
-                sizes.includes("L") ? "bg-pink-100" : "bg-slate-200"
-              } px-3 py-1 cursor-pointer`}
+                sizes.includes("L") ? "bg-[#8b5100] text-white" : "bg-gray-100"
+              } px-3 py-1 cursor-pointer rounded`}
             >
               L
             </p>
@@ -245,8 +245,8 @@ const Add = ({ token }) => {
           >
             <p
               className={`${
-                sizes.includes("XL") ? "bg-pink-100" : "bg-slate-200"
-              } px-3 py-1 cursor-pointer`}
+                sizes.includes("XL") ? "bg-[#8b5100] text-white" : "bg-gray-100"
+              } px-3 py-1 cursor-pointer rounded`}
             >
               XL
             </p>
@@ -262,8 +262,8 @@ const Add = ({ token }) => {
           >
             <p
               className={`${
-                sizes.includes("XXL") ? "bg-pink-100" : "bg-slate-200"
-              } px-3 py-1 cursor-pointer`}
+                sizes.includes("XXL") ? "bg-[#8b5100] text-white" : "bg-gray-100"
+              } px-3 py-1 cursor-pointer rounded`}
             >
               XXL
             </p>
@@ -281,7 +281,7 @@ const Add = ({ token }) => {
           Add to bestseller
         </label>
       </div>
-      <button type="submit" className="w-28 py-3 mt-4 bg-black text-white">
+      <button type="submit" className="w-28 py-3 mt-4 bg-[#8b5100] cursor-pointer rounded text-white">
         ADD
       </button>
     </form>

@@ -30,23 +30,24 @@ const Cart = () => {
     <div className="pt-14">
       <div className="flex flex-col md:flex-row gap-[4rem] justify-between">
         <div className="w-full md:w-[65%]">
-          <div className="text-2xl mb-3 float-left">
+          <div className="text-2xl mb-3 sm:float-left">
             <p className="text-[#8b5100]">CART</p>
           </div>
-          {cartData.map((item, index) => {
-            const productData = products.find(
-              (product) => product._id === item._id
-            );
-            return (
-              <div className=" mt-[5rem]">
-                <div className="hidden sm:grid sm:grid-cols-[0.7fr_2fr_1fr_1fr_0.5fr_0.5fr]">
+          <div className="hidden sm:grid sm:grid-cols-[0.7fr_0.2fr_2fr_1fr_1fr_0.5fr_0.5fr] mt-[5rem]">
                   <p>Item</p>
+                  <p></p>
                   <p>Name</p>
                   <p>Quantity</p>
                   <p>Size</p>
                   <p>Amount</p>
                   <p className="text-center">X</p>
                 </div>
+          {cartData.map((item, index) => {
+            const productData = products.find(
+              (product) => product._id === item._id
+            );
+            return (
+              <div className=" ">
                 <div
                   className="py-4 rounded border-gray-200 mt-[1rem] border-t border-b text-gray-700 grid grid-cols-[1fr_3fr_0.5fr_0.3fr] sm:grid-cols-[0.7fr_0fr_2fr_1fr_1fr_0.5fr_0.5fr] items-center gap-4"
                   key={index}

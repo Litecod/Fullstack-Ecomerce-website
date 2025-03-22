@@ -20,7 +20,7 @@ const Orders = ({ token }) => {
       );
       console.log(response.data.orders);
       if (response.data.success) {
-        setOrders(response.data.orders);
+        setOrders(response.data.orders.reverse());
       } else {
         toast.error(response.data.message);
       }
@@ -46,12 +46,12 @@ const Orders = ({ token }) => {
   }, [token]);
 
   return (
-    <div className="">
+    <div className="p-5 md:p-8 rounded">
       <h3> Order Placed</h3>
       <div className="">
         {orders.map((order, index) => {
           return (
-            <div key={index} className="grid grid-cols-1 sm:grid-cols-[0.5fr_2fr_1fr] lg:grid-cols-[0.5fr_2fr_1fr_1fr_1fr] gap-3 items-start border-2 border-gray-200 p-5 md:p-8 my-3 md:my-4 text-xs sm:text-sm text-gray-700">
+            <div key={index} className="grid rounded grid-cols-1 sm:grid-cols-[0.5fr_2fr_1fr] lg:grid-cols-[0.5fr_2fr_1fr_1fr_1fr] p-5 md:p-8 gap-3 items-start bg-gray-50 my-3 md:my-4 text-xs sm:text-sm text-gray-700">
               <img className="w-12" src={assets.parcel_icon} alt="" />
               <div className="">
               <div>
@@ -94,7 +94,7 @@ const Orders = ({ token }) => {
               <p>Payment: {order.payment ? "Done" : "Pending"}</p>
               <p>Date: {new Date(order.date).toLocaleDateString()}</p>
             </div>
-            <p className="text-sm sm:text-[15px]" >{currency}: {order.amount}</p>
+            <p className="text-sm sm:text-[15px]" >{currency}: {order.amount},000.00</p>
             <select onChange={(e) => statusHandler(e,order._id)} value={order.status} className="p-2 font-semibold">
               <option value="Order Placed">Order Placed</option>
               <option value="Packing">Packing</option>

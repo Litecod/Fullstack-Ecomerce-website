@@ -20,6 +20,7 @@ const Login = () => {
         if(response.data.success) {
           setToken(response.data.token);
           localStorage.setItem("token", response.data.token)
+          toast.success("Welcome to Lite Shoppy")
         }else {
           toast.error(response.data.message)
         }
@@ -28,6 +29,7 @@ const Login = () => {
         if(response.data.success) {
           setToken(response.data.token);
           localStorage.setItem("token", response.data.token)
+          toast.success("Login Successful")
         }else {
           toast.error(response.data.message)
         }

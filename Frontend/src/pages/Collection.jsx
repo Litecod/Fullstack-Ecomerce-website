@@ -7,10 +7,12 @@ import ProductItem from "../components/ProductItem";
 const Collection = () => {
   const { products, search , showSearch } = useContext(ShopContext);
   const [showFilter, setShowFilter] = useState(false);
-  const [filterProduct, setFilterProduct] = useState([]);
+  const [filterProducts, setFilterProduct] = useState([]);
   const [category, setCategory] = useState([]);
   const [subCategory, setSubCategory] = useState([]);
   const [sortType, setSortType] = useState("relavant")
+
+  const filterProduct = filterProducts.reverse();
 
   const toggleCatergory = (e) => {
     if (category.includes(e.target.value)) {
